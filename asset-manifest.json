@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-issue-ganttchart/static/css/main.b3e0f50b.css",
+    "main.js": "/react-issue-ganttchart/static/js/main.a4e7f2c3.js",
+    "index.html": "/react-issue-ganttchart/index.html",
+    "main.b3e0f50b.css.map": "/react-issue-ganttchart/static/css/main.b3e0f50b.css.map",
+    "main.a4e7f2c3.js.map": "/react-issue-ganttchart/static/js/main.a4e7f2c3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b3e0f50b.css",
+    "static/js/main.a4e7f2c3.js"
+  ]
+}
