@@ -226,7 +226,7 @@ describe('getGitLabAPIURLIssueFilterd', () => {
         { id: 12, name: 'satoshi' }
       )
     ).toBe(
-      'https://gitlab.com/api/v4/projects/lamact%2Freact-issue-ganttchart/issues?access_token=privateaccesstoken&labels=Todo,Doing,&assignee_id=12&per_page=100&state=opened'
+      'https://gitlab.com/api/v4/projects/lamact%2Freact-issue-ganttchart/issues?access_token=privateaccesstoken&labels=Todo,Doing,&assignee_id=12&per_page=100'
     );
   });
   test('true', () => {
@@ -241,7 +241,7 @@ describe('getGitLabAPIURLIssueFilterd', () => {
         { id: 12, name: 'satoshi' }
       )
     ).toBe(
-      'https://gitlab.com/api/v4/projects/lamact%2Fsubgrp%2Freact-issue-ganttchart/issues?access_token=privateaccesstoken&labels=Todo,Doing,&assignee_id=12&per_page=100&state=opened'
+      'https://gitlab.com/api/v4/projects/lamact%2Fsubgrp%2Freact-issue-ganttchart/issues?access_token=privateaccesstoken&labels=Todo,Doing,&assignee_id=12&per_page=100'
     );
   });
   test('null', () => {

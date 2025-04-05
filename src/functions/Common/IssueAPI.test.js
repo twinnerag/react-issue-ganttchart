@@ -12,7 +12,7 @@ describe('true is truthy', () => {
 //   const mockAxios = new MockAdapter(axios);
 //   mockAxios
 //     .onGet(
-//       'https://gitlab.com/api/v4/projects/lamact%2Fsukima/issues?access_token=token&labels=&assignee_id=3666147&per_page=100&state=opened'
+//       'https://gitlab.com/api/v4/projects/lamact%2Fsukima/issues?access_token=token&labels=&assignee_id=3666147&per_page=100'
 //     )
 //     .reply(200, [
 //       {
