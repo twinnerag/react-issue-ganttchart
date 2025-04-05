@@ -24,7 +24,6 @@
     "react-scripts": "^5.0.1",
     "sfcookies": "^1.0.2"
   },
-  "homepage": "https://lamact.github.io/react-issue-ganttchart/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

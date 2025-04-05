@@ -26,7 +26,7 @@ const Toolbar = (props) => {
       <TextField
         className={classes.root}
         required
-        placeholder="https://github.com/lamact/react-issue-ganttchart"
+        placeholder="https://github.com/tramseyer/react-issue-ganttchart"
         label="Git Repository URL"
         style={{ width: '20%', verticalAlign: 'middle' }}
         onChange={(e) => {
@@ -113,7 +113,7 @@ const Toolbar = (props) => {
         </Button>
       </ButtonGroup>
       <IconButton color="primary" style={{ verticalAlign: 'middle' }}>
-        <GitHubIcon onClick={() => window.open('https://github.com/lamact/react-issue-ganttchart')} />
+        <GitHubIcon onClick={() => window.open('https://github.com/tramseyer/react-issue-ganttchart')} />
       </IconButton>
     </form>
   );
