@@ -39,7 +39,7 @@ export const getYamlPartFromDescription = (description) => {
   if (typeof description !== 'string') {
     return null;
   }
-  let str = description.split(/^```yaml/);
+  let str = description.split(/```yaml/);
   if (str === null || str.length < 2) {
     return null;
   }
@@ -119,7 +119,7 @@ export const replacePropertyInDescriptionString = (description, task) => {
 ` +
     task_section +
     `\`\`\``;
-  let str = description.split(/^```yaml/);
+  let str = description.split(/```yaml/);
   if (str === null || str.length < 2) {
     if (/```/.test(description)) {
       return null;
