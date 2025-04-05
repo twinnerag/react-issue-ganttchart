@@ -23,21 +23,21 @@ const App = (props) => {
 
     // Set Zoom Level
     const zoom = read_cookie("zoom")
-    if (zoom == "Days" || zoom == "Weeks" || zoom == "Years") {
+    if (zoom === "Days" || zoom === "Weeks" || zoom === "Years") {
       gantt.ext.zoom.setLevel(zoom);
     }
 
     // Set Menu Opened
     gantt.config.show_grid = read_cookie('menu_opened');
     gantt.render();
-  }, []);
+  }, [setValue]);
 
   useEffect(() => {
     dispatch({
       type: 'setStateFromURLQueryString',
       value: { props: props, setValue: setValue },
     });
-  }, [props.location]);
+  }, [props, setValue]);
 
   useEffect(() => {
     setLabelListOfRepoFromAPI(state.git_url, state.token)

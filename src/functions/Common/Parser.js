@@ -1,4 +1,4 @@
-import { isValidVariable, isValidIDName, isNumber } from './CommonHelper.js';
+import { isValidVariable, isValidIDName } from './CommonHelper.js';
 import yaml from 'js-yaml';
 import { gantt } from 'dhtmlx-gantt';
 
@@ -132,7 +132,7 @@ export const replacePropertyInDescriptionString = (description, task) => {
     return null;
   }
   const end_section = str[1];
-  if (first_section == null || end_section == null) {
+  if (first_section === null || end_section === null) {
     return null;
   }
   return first_section + task_section + end_section;
