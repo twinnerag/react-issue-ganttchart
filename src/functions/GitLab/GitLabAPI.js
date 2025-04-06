@@ -163,10 +163,11 @@ export const openGitLabNewIssueAtBrowser = (gantt_task, git_url) => {
   if (gantt_task.parent === null) {
     gantt_task.parent = 0;
   }
+  const parsedParent = parseInt(removeFirstSharp(gantt_task.parent));
   const task = {
     start_date: start_date_str,
     progress: 0.1,
-    parent: parseInt(removeFirstSharp(gantt_task.parent)),
+    parent: isNaN(parsedParent) ? 0 : parsedParent,
   };
   let body = replacePropertyInDescriptionString('', task);
   body = encodeURIComponent(body);

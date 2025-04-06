@@ -57,6 +57,16 @@ progress: 0.5
 issueの内容
 `;
 
+const description_have_parent = `\`\`\`yaml
+start_date: 2021/2/5
+progress: 0.5
+parent: 0
+\`\`\`
+
+## 概要 
+issueの内容
+`;
+
 const issue_info_dont_have_parent = {
   iid: 36,
   title: 'テストissueのタイトル',
@@ -66,7 +76,7 @@ const issue_info_dont_have_parent = {
   updated_at:new Date('2021/2/5'),
 };
 
-const gantt_task_dont_have_parent = {
+const gantt_task_have_parent = {
   id: '#36',
   text: 'テストissueのタイトル',
   start_date: '2021/2/5',
@@ -77,22 +87,22 @@ const gantt_task_dont_have_parent = {
   description: description_dont_have_parent,
   update:'2021/2/5',
   links:[],
-  parent: null,
-  _parent: null
+  parent: "#0",
+  _parent: "#0"
 };
 
 describe('have parent', () => {
   test('true', () => {
     expect(generateGanttTaskFromGitLab(issue_info_dont_have_parent)).toEqual(
-      gantt_task_dont_have_parent
+      gantt_task_have_parent
     );
   });
   test('true', () => {
     expect(
       updateGitLabDescriptionStringFromGanttTask(
         description_dont_have_parent,
-        gantt_task_dont_have_parent
+        gantt_task_have_parent
       )
-    ).toEqual(description_dont_have_parent);
+    ).toEqual(description_have_parent);
   });
 });

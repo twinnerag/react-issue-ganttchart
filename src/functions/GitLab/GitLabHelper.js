@@ -33,6 +33,8 @@ export const generateGanttTaskFromGitLab = (issue_info) => {
   var parent = getNumberFromDescriptionYaml(issue_info.description, 'parent');
   if (parent !== null) {
     parent = '#' + parent;
+  } else {
+    parent = '#0';
   }
   var gantt_task = {
     id: '#' + issue_info.iid,

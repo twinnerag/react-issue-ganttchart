@@ -92,7 +92,7 @@ export const getNumberFromDescriptionYaml = (description, column_name) => {
     return null;
   }
   const number = yaml_struct[column_name];
-  if (typeof number !== 'number') {
+  if (typeof number !== 'number' || isNaN(number)) {
     return null;
   }
   return number;

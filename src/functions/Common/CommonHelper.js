@@ -84,7 +84,8 @@ export const date2string = (date) => {
 };
 
 export const adjustDateString = (date_str) => {
-  return date2string(new Date(date_str));
+  const date = date_str ? new Date(date_str) : new Date();
+  return date2string(date);
 };
 
 export const getGanttStartDate = (start_date, due_date, created_at) => {
