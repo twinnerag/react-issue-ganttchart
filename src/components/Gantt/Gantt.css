@@ -11,6 +11,14 @@
   background: #8b8b8b13;
 }
 
+.closed .gantt_task_progress {
+  background-color: #66cc66;
+}
+
+.closed .gantt_task_progress_wrapper {
+  background: #77dd77;
+}
+
 .behind .gantt_task_progress {
   background-color: #ff7777;
 }
