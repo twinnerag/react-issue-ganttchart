@@ -103,7 +103,7 @@ export const updateGitLabIssueFromGanttTask = (
           parseInt(issue_info.iid) === parseInt(removeFirstSharp(gantt_task.id))
         ) {
           let description = updateGitLabDescriptionStringFromGanttTask(
-            issue_info.description,
+            issue_info.description !== null ? issue_info.description : '',
             gantt_task
           );
           if (description === null) {
