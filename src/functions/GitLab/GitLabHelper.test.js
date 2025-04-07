@@ -20,6 +20,9 @@ const issue_info = {
   due_date: new Date('2021/2/5'),
   description: description,
   updated_at:new Date('2021/2/5'),
+  time_stats: {
+    human_time_estimate: null
+  },
 };
 
 const gantt_task = {
@@ -74,6 +77,9 @@ const issue_info_dont_have_parent = {
   due_date: new Date('2021/2/5'),
   description: description_dont_have_parent,
   updated_at:new Date('2021/2/5'),
+  time_stats: {
+    human_time_estimate: null
+  },
 };
 
 const gantt_task_have_parent = {

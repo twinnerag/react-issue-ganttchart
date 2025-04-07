@@ -38,7 +38,7 @@ export const generateGanttTaskFromGitLab = (issue_info) => {
   }
   var gantt_task = {
     id: '#' + issue_info.iid,
-    text: issue_info.title,
+    text: issue_info.time_stats.human_time_estimate !== null ? issue_info.title + ' (' + issue_info.time_stats.human_time_estimate + ')': issue_info.title,
     state: issue_info.state,
     start_date: getGanttStartDate(start_date, due_date, issue_info.created_at),
     due_date: getGanttDueDate(start_date, due_date, issue_info.created_at),
