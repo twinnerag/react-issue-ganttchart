@@ -30,19 +30,27 @@ export const generateGanttTaskFromGitLab = (issue_info) => {
     'start_date'
   );
   const due_date = adjustDateString(issue_info.due_date);
+  const dateless = (start_date === null || due_date === null);
   var parent = getNumberFromDescriptionYaml(issue_info.description, 'parent');
   if (parent !== null) {
     parent = '#' + parent;
   } else {
     parent = '#0';
   }
+  var icon = ''
+  if (issue_info.issue_type === 'issue') {
+    icon = '📂 ';
+  } else if (issue_info.issue_type === 'task') {
+    icon = '📋 ';
+  }
   var gantt_task = {
     id: '#' + issue_info.iid,
-    text: issue_info.time_stats.human_time_estimate !== null ? issue_info.title + ' (' + issue_info.time_stats.human_time_estimate + ')': issue_info.title,
+    text: issue_info.time_stats.human_time_estimate !== null ? icon + issue_info.title + ' (' + issue_info.time_stats.human_time_estimate + ')' : icon + issue_info.title,
     state: issue_info.state,
-    start_date: getGanttStartDate(start_date, due_date, issue_info.created_at),
-    due_date: getGanttDueDate(start_date, due_date, issue_info.created_at),
-    duration: getGanttDuration(start_date, due_date, issue_info.created_at),
+    dateless: dateless,
+    start_date: dateless === false ? getGanttStartDate(start_date, due_date, issue_info.created_at) : new Date(new Date().getTime() + 86400000),
+    due_date: dateless === false ? getGanttDueDate(start_date, due_date, issue_info.created_at) : new Date(new Date().getTime() + 86400000),
+    duration: dateless === false ? getGanttDuration(start_date, due_date, issue_info.created_at) : 1,
     progress: getNumberFromDescriptionYaml(issue_info.description, 'progress'),
     assignee: getGitLabAssignee(issue_info),
     description: issue_info.description,

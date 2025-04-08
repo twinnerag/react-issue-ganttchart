@@ -11,6 +11,14 @@
   background: #8b8b8b13;
 }
 
+.dateless .gantt_task_progress {
+  background-color: #ffe066;
+}
+
+.dateless .gantt_task_progress_wrapper {
+  background: #ffe877;
+}
+
 .closed .gantt_task_progress {
   background-color: #66cc66;
 }

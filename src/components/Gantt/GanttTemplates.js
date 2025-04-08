@@ -30,6 +30,9 @@ export const setGanttTemplates = (gantt) => {
     if (task.state === "closed") {
       return 'closed';
     }
+    if (task.dateless === true) {
+      return 'dateless';
+    }
     if (task.progress === 1) {
       return '';
     }
