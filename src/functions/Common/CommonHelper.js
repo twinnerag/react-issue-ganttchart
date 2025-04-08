@@ -126,7 +126,7 @@ export const getGanttDuration = (start_date, due_date, created_at) => {
   if (!isValidVariable(start_date)) {
     start_date = created_at;
   }
-  if (start_date !== null && due_date != null) {
+  if (start_date !== null && due_date !== null) {
     duration = calculateDuration(start_date, due_date);
   } else {
     duration = 1;
